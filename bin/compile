@@ -1,0 +1,20 @@
+#!/bin/bash
+BUILD_DIR=$1
+
+INSTALL_DIR=$BUILD_DIR/vendor/poppler/
+
+ENVSCRIPT=$BUILD_DIR/.profile.d/poppler.sh
+
+POPPLER_DIR=${HOME}/vendor/poppler/poppler
+
+echo "Untarring poppler.tar.gz into ${INSTALL_DIR}"
+
+mkdir -p $INSTALL_DIR
+tar -zxvf poppler-0.29.0.tar.gz -C $INSTALL_DIR
+
+echo "Complete!"
+
+echo "Building runtime environment for poppler"
+mkdir -p $BUILD_DIR/.profile.d
+echo "export PATH=\"$POPPLER_DIR/bin:\$PATH\"" > $ENVSCRIPT
+
