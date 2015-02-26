@@ -17,4 +17,4 @@ echo "Complete!"
 echo "Building runtime environment for poppler"
 mkdir -p $BUILD_DIR/.profile.d
 echo "export PATH=\"$POPPLER_DIR/bin:\$PATH\"" > $ENVSCRIPT
-echo "export LD_LIBRARY_PATH=\"$POPPLER_DIR/lib:\$LD_LIBRARY_PATH\"" > $ENVSCRIPT
+echo "export LD_LIBRARY_PATH=\"$POPPLER_DIR/lib:\$LD_LIBRARY_PATH\"" >> $ENVSCRIPT
